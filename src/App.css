@@ -1,9 +1,11 @@
+/* Size of the entire app */
 .app-container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 90vh;
 }
 
+/* Videos list */
 .video-list-container {
   flex: 1;
   padding: 20px;
@@ -11,6 +13,12 @@
   border-right: 1px solid #ccc;
 }
 
+.video-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Embedded video */
 .video-player {
   flex: 3;
   justify-content: center;
@@ -19,11 +27,7 @@
   height: 80vh;
 }
 
-.video-list {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Each video in the list */
 .video-container, .added-video {
   display: flex;
   flex-direction: column;
@@ -32,6 +36,7 @@
   cursor: pointer;
 }
 
+/* Video thumbnail */
 .video-container img, .added-video img {
   width: 40%;
   border: 1px solid #ccc;
