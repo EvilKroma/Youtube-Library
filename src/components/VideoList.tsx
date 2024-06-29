@@ -7,9 +7,9 @@ interface Video {
     snippet: { title: string; thumbnails: { default: { url: string } } };
 }
 
-const apiKey = "AIzaSyDNZclk4gyX-z3Ii_lEj7FbqWhKiXx6-VY";
-const channelId = "UCWeg2Pkate69NFdBeuRFTAw";
-const initialApiUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=2`;
+const apiKey = "AIzaSyDNZclk4gyX-z3Ii_lEj7FbqWhKiXx6-VY"; // API key
+const channelId = "UCWeg2Pkate69NFdBeuRFTAw"; // channel ID of squeezie channel for the 2 firts videos in the list
+const initialApiUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=2`; // URL called
 
 const VideoList: React.FC = () => {
     const [videos, setVideos] = useState<Video[]>([]);
@@ -52,7 +52,7 @@ const VideoList: React.FC = () => {
     };
 
     const handleVideoClick = (videoId: string) => {
-        console.log(`Video clicked: ${videoId}`); // Vérifiez la valeur de selectedVideo dans la console
+        console.log(`Video clicked: ${videoId}`); 
         setSelectedVideo(videoId);
     };
 
@@ -61,13 +61,13 @@ const VideoList: React.FC = () => {
             <div className="video-list-container">
                 {error && <p>Erreur: {error}</p>}
                 <form onSubmit={handleSearch}>
-                    <input
+                    <input id="button"
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         placeholder="Rechercher des vidéos"
                     />
-                    <button type="submit">Rechercher</button>
+                    <button id="button" type="submit">Rechercher</button>
                 </form>
                 <div className="video-list">
                     {searchResults.map((video) => (
@@ -77,7 +77,8 @@ const VideoList: React.FC = () => {
                         </div>
                     ))}
                 </div>
-                <h2>Vidéos ajoutées</h2>
+                <br />
+                <br />
                 <div className="added-videos">
                     {videos.map((video) => (
                         <div key={video.id.videoId} className="added-video">
@@ -87,7 +88,7 @@ const VideoList: React.FC = () => {
                                 onClick={() => handleVideoClick(video.id.videoId)}
                             />
                             <h3>{video.snippet.title}</h3>
-                            <button onClick={() => handleRemoveVideo(video.id.videoId)}>Supprimer</button>
+                            <button id="button" onClick={() => handleRemoveVideo(video.id.videoId)}>Supprimer</button>
                         </div>
                     ))}
                 </div>
@@ -97,9 +98,9 @@ const VideoList: React.FC = () => {
                     <iframe
                         width="100%"
                         height="100%"
-                        src={`https://www.youtube.com/embed/${selectedVideo}`}
+                        src={`https://www.youtube.com/embed/${selectedVideo}`} // Embedded video on thr right on click
                         frameBorder="0"
-                        allowFullScreen
+                        allowFullScreen // Allows the embedded video to be in fullscreen
                         title="YouTube Video Player"
                     ></iframe>
                 )}
