@@ -1,17 +1,21 @@
-import React from 'react'; // Importe la bibliothèque React pour utiliser ses fonctionnalités.
-import ReactDOM from 'react-dom/client'; // Importe la méthode de rendu de React pour le DOM.
-import './index.css'; // Importe les styles globaux pour l'application.
-import App from './App'; // Importe le composant principal de l'application.
-import reportWebVitals from './reportWebVitals'; // Importe la fonction pour mesurer les performances de l'application.
+/*
+* Main file, calling App.tsx
+*/
+
+import React from 'react'; // Import React library to use their functionalities
+import ReactDOM from 'react-dom/client'; 
+import './index.css'; 
+import App from './App'; // Imports the application's main component
+import reportWebVitals from './reportWebVitals'; // Create React App includes a performance relayer that allows you to measure and analyze the performance of your application
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement // Sélectionne l'élément avec l'ID 'root' dans le document HTML.
+  document.getElementById('root') as HTMLElement // Selects the element with the 'root' ID in the .html file
 );
 
 root.render(
   <React.StrictMode>
-    <App /> {/* Rend le composant principal App dans l'élément root, en mode strict pour détecter les erreurs potentielles. */}
+    <App /> {/* Render App element in root, strict mod to detect erros */}
   </React.StrictMode>
 );
 
-reportWebVitals(); // Appelle la fonction pour mesurer les performances de l'application.
+reportWebVitals(); // For performance relayer
