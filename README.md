@@ -1,14 +1,11 @@
-# App description
+# Youtube Library
 
-Youtube library is an application that lets you group together all your favorite youtube videos, simply by searching for them in the search bar.
+**Youtube Library** est une application qui vous permet de regrouper facilement toutes vos vidéos YouTube préférées, simplement en les recherchant dans la barre de recherche.
 
-## Run the app
+## Lancer l'application
 
-In the project directory, you can run :
+Dans le répertoire du projet, exécutez la commande suivante :
 
 ### `npm start`
 
-It wil run the application in your browser.
-
-
-
+Cela lancera l'application directement dans votre navigateur.
